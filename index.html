@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4UILIVE Stats — вся статистика стримов в одном месте</title>
+<meta name="description" content="Программа для Windows: сама записывает статистику Twitch-стримов — онлайн, фолловеры, место в категории, донаты, соцсети. Панель для OBS, итоги месяца, Excel.">
+<meta property="og:title" content="4UILIVE Stats — статистика Twitch-стримов">
+<meta property="og:description" content="Онлайн, фолловеры, место в категории, донаты и соцсети — всё записывается само. 7 дней бесплатно.">
+<meta property="og:image" content="screen-main.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e39b4f'/%3E%3Cpath d='M7 22l6-7 4 4 8-10' fill='none' stroke='%2316120e' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#14110d;--bg2:#1b1712;--sf:#221d17;--sf2:#2c251d;--line:#3a3128;--text:#f5ede2;--t2:#d6c9b7;--mu:#a29481;--ac:#e39b4f;--ac2:#f2c072;--ok:#8fcf7a;--tw:#9146ff;--tg:#2aa3e0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 "Segoe UI",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.brand{font-family:Bahnschrift,"Segoe UI",sans-serif;font-weight:700;letter-spacing:.02em}
+.brand b{color:var(--ac)}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
+header .wrap{display:flex;align-items:center;gap:26px;height:64px}
+header .brand{font-size:20px;text-decoration:none}
+header nav{display:flex;gap:22px;margin-left:auto}
+header nav a{text-decoration:none;color:var(--t2);font-size:15px}
+header nav a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none;border:1px solid var(--line);background:var(--sf);color:var(--text);transition:transform .15s,background .2s,border-color .2s;cursor:pointer;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);border-color:var(--ac)}
+.btn.primary{background:var(--ac);border-color:var(--ac);color:#1a1209}
+.btn.primary:hover{background:var(--ac2);border-color:var(--ac2)}
+.btn.tg{background:var(--tg);border-color:var(--tg);color:#fff}
+.btn.small{padding:8px 16px;font-size:14px;border-radius:10px}
+.btn svg{width:20px;height:20px;flex:none}
+.hero{position:relative;padding:84px 0 40px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-200px -100px auto auto;width:760px;height:760px;background:radial-gradient(circle,color-mix(in srgb,var(--ac) 26%,transparent),transparent 65%);pointer-events:none}
+.hero::after{content:"";position:absolute;left:-260px;top:220px;width:640px;height:640px;background:radial-gradient(circle,#1a9a8822,transparent 65%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:var(--sf);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:14px;color:var(--t2)}
+.kicker i{width:8px;height:8px;border-radius:50%;background:#ff5c5c;box-shadow:0 0 0 4px #ff5c5c33}
+h1{font-family:Bahnschrift,"Segoe UI",sans-serif;font-size:clamp(36px,5.6vw,64px);line-height:1.05;margin:22px 0 18px;letter-spacing:-.01em;max-width:860px}
+h1 em{font-style:normal;color:var(--ac)}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--t2);max-width:700px;margin:0 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.cta small{color:var(--mu);font-size:14px;width:100%;margin-top:4px}
+.shot{margin-top:56px;position:relative}
+.shot img.main{display:block;width:100%;border-radius:16px;border:1px solid var(--line);box-shadow:0 40px 100px #000a}
+.shot img.obs{position:absolute;right:-18px;bottom:-34px;width:clamp(150px,22%,250px);border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 60px #000c}
+.shot .tag{position:absolute;left:18px;bottom:-18px;background:var(--sf2);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:14px;color:var(--t2)}
+section{padding:90px 0 0}
+h2{font-family:Bahnschrift,"Segoe UI",sans-serif;font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:0 0 12px}
+.sub{color:var(--t2);max-width:680px;margin:0 0 36px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:linear-gradient(180deg,var(--sf),var(--bg2));border:1px solid var(--line);border-radius:16px;padding:24px}
+.card .ic{width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--ac) 16%,transparent);color:var(--ac);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.card .ic svg{width:24px;height:24px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--t2);font-size:15px}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.list li{display:flex;gap:12px;color:var(--t2)}
+.list li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:color-mix(in srgb,var(--ok) 18%,transparent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%238fcf7a' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.list b{color:var(--text)}
+.obsbox{display:flex;justify-content:center}
+.obsbox img{width:min(300px,100%);border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 80px #000b}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan{position:relative;background:var(--sf);border:1px solid var(--line);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;gap:6px}
+.plan.best{border-color:var(--ac);background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 12%,var(--sf)),var(--sf))}
+.plan .badge{position:absolute;top:-12px;right:20px;background:var(--ac);color:#1a1209;font-weight:700;font-size:13px;border-radius:99px;padding:3px 12px}
+.plan .nm{color:var(--t2);font-weight:600}
+.plan .pr{font-family:Bahnschrift,"Segoe UI",sans-serif;font-size:44px;font-weight:700;line-height:1.1}
+.plan .pr small{font-size:18px;color:var(--mu);font-weight:400}
+.plan .per{color:var(--mu);font-size:14px;margin-bottom:16px}
+.plan .btn{margin-top:auto}
+.trial{margin-top:18px;color:var(--t2);font-size:15px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:var(--sf);border:1px solid var(--line);border-radius:16px;padding:22px;position:relative}
+.step::before{counter-increment:s;content:counter(s);display:flex;width:34px;height:34px;border-radius:10px;background:var(--sf2);border:1px solid var(--line);align-items:center;justify-content:center;font-weight:700;color:var(--ac);margin-bottom:12px}
+.step h3{margin:0 0 6px;font-size:17px}
+.step p{margin:0;color:var(--t2);font-size:14.5px}
+.warn{margin-top:18px;display:flex;gap:14px;align-items:flex-start;background:color-mix(in srgb,#2aa3e0 9%,var(--sf));border:1px solid color-mix(in srgb,#2aa3e0 35%,var(--line));border-radius:14px;padding:18px 20px;color:var(--t2);font-size:15px}
+.warn b{color:var(--text)}
+.ss{flex:none;width:300px;background:#0f2a44;border-radius:8px;padding:12px 14px;color:#fff;font:13px/1.4 "Segoe UI",sans-serif}
+.ss .t{font-weight:600;font-size:15px;margin-bottom:6px}
+.ss .l{color:#9ecbff;text-decoration:underline}
+.ss .r{display:flex;justify-content:flex-end;gap:6px;margin-top:10px}
+.ss .r span{white-space:nowrap;background:#ffffff22;border:1px solid #ffffff55;padding:3px 10px;font-size:12px}
+.ss .r span.hl{outline:2px solid var(--ac2)}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+details{background:var(--sf);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--ac);font-size:22px;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin:10px 0 0;color:var(--t2);font-size:15px}
+.final{margin:100px 0 0;padding:56px 32px;text-align:center;border-radius:24px;border:1px solid var(--line);background:radial-gradient(circle at 50% 0,color-mix(in srgb,var(--ac) 20%,transparent),transparent 60%),var(--bg2)}
+.final .cta{justify-content:center}
+footer{padding:50px 0 40px;color:var(--mu);font-size:14px}
+footer .wrap{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}
+footer a{color:var(--t2)}
+@media(max-width:900px){.grid,.plans,.steps,.faq{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}header nav{display:none}.shot img.obs{display:none}.warn{flex-direction:column}}
+@media(max-width:600px){.grid,.plans,.steps,.faq{grid-template-columns:1fr}.hero{padding-top:50px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#">4UI<b>LIVE</b> Stats</a>
+  <nav><a href="#features">Возможности</a><a href="#obs">Панель OBS</a><a href="#price">Цены</a><a href="#install">Установка</a><a href="#faq">Вопросы</a></nav>
+  <a class="btn small primary dl" href="https://github.com/4UILIVE/4uilive-stats/releases/latest">Скачать</a>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <span class="kicker"><i></i>Для Twitch-стримеров · Windows 10 и 11</span>
+  <h1>Вся статистика твоих стримов — <em>в одном месте</em></h1>
+  <p class="lead">Программа сама записывает каждый эфир: онлайн, фолловеров, место в категории, чат, сабы и донаты. А потом показывает, какие игры, форматы, время старта и ролики приводят зрителей.</p>
+  <div class="cta">
+    <a class="btn primary dl" id="dlMain" href="https://github.com/4UILIVE/4uilive-stats/releases/latest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg><span id="dlText">Скачать для Windows</span></a>
+    <a class="btn tg buy" href="https://t.me/supp0rt_4uilive_twitch"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 4.3L2.9 11.4c-1 .4-1 1.9.1 2.2l4.6 1.4 1.8 5.5c.3.9 1.4 1.1 2 .4l2.6-2.6 4.6 3.4c.8.6 1.9.1 2.1-.9l3-14.4c.2-1.1-.9-2-1.9-1.6zM9.7 14.5l-.5 3.6-1.2-4 9.6-6.2-7.9 6.6z"/></svg>Купить подписку</a>
+    <small id="dlInfo">7 дней бесплатно, без карты и регистрации. Дальше — от 249 ₽ в месяц.</small>
+  </div>
+  <div class="shot">
+    <img class="main" src="screen-main.jpg" alt="Главный экран 4UILIVE Stats во время эфира" width="1366" height="900">
+    <img class="obs" src="screen-obs.jpg" alt="Панель для OBS" width="320" height="560" loading="lazy">
+    <span class="tag">👁 Суммы скрыты одной кнопкой — можно показывать на стриме</span>
+  </div>
+</div></div>
+
+<section id="features"><div class="wrap">
+  <h2>Что умеет программа</h2>
+  <p class="sub">Подключаешь Twitch один раз — дальше всё записывается само, пока программа открыта. Даже свёрнутая.</p>
+  <div class="grid">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7.5 15l3.5-4.5 3 2.5 5-6.5"/></svg></div><h3>Стримы записываются сами</h3><p>Каждую минуту: онлайн, новые фолловеры, участники чата, сабы, рейды. Эфир закончился — он уже в таблице.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0z"/><path d="M17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/></svg></div><h3>Место в категории</h3><p>Каким по счёту ты идёшь среди стримеров своей игры и языка — прямо во время эфира и в среднем за стрим.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.4c-.4-.9-1.4-1.5-2.6-1.5-1.5 0-2.6.8-2.6 2s1.2 1.6 2.6 2 2.6.8 2.6 2-1.1 2-2.6 2c-1.2 0-2.2-.6-2.7-1.5M12 6.3v11.4"/></svg></div><h3>Донаты и деньги</h3><p>DonationAlerts, DonatePay и DonateX: вся история, топ донатеров, суммы чистыми после комиссии, цель на месяц.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.6 9.3l4 2.7-4 2.7z" fill="currentColor"/></svg></div><h3>Что приводит зрителей</h3><p>Shorts, TikTok, YouTube и Telegram-канал: сколько фолловеров пришло после ролика или анонса.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></div><h3>Когда стримить лучше</h3><p>Лучшее время старта, сравнение игр и форматов, графики по месяцам и подсказки, что работает.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg></div><h3>Итоги месяца картинкой</h3><p>Онлайн, фолловеры, лучший стрим и рост к прошлому месяцу — готовый пост для Telegram, ВК или сторис.</p></div>
+  </div>
+</div></section>
+
+<section id="obs"><div class="wrap split">
+  <div>
+    <h2>Панель прямо в OBS</h2>
+    <p class="sub">Добавь одну ссылку в «Док-панели» OBS — и статистика эфира будет рядом с микшером. Саму программу можно не разворачивать.</p>
+    <ul class="list">
+      <li><span><b>Место в категории</b> со стрелкой: поднялся ты или опустился</span></li>
+      <li><span><b>Онлайн сейчас</b>, за 10 минут, средний и пик — с графиком</span></li>
+      <li><span><b>Фолловеры, чат, сабы, донаты</b> и лента событий: кто задонатил, кто зарейдил</span></li>
+      <li><span><b>Глазик</b> прячет все суммы — в программе и в OBS, — чтобы не светить доход на стриме</span></li>
+    </ul>
+  </div>
+  <div class="obsbox"><img src="screen-obs.jpg" alt="Панель 4UILIVE Stats в OBS" width="320" height="560" loading="lazy"></div>
+</div></section>
+
+<section id="price"><div class="wrap">
+  <h2>Цены</h2>
+  <p class="sub">Все возможности в любом тарифе. Подписка покупается в Telegram — ответим и пришлём ключ.</p>
+  <div class="plans">
+    <div class="plan"><span class="nm">1 месяц</span><span class="pr">249 <small>₽</small></span><span class="per">в месяц</span><a class="btn buy" data-plan="1 месяц — 249 ₽" href="https://t.me/supp0rt_4uilive_twitch">Купить в Telegram</a></div>
+    <div class="plan"><span class="badge">−20%</span><span class="nm">3 месяца</span><span class="pr">599 <small>₽</small></span><span class="per">≈ 200 ₽ в месяц</span><a class="btn buy" data-plan="3 месяца — 599 ₽" href="https://t.me/supp0rt_4uilive_twitch">Купить в Telegram</a></div>
+    <div class="plan best"><span class="badge">−30% · выгоднее всего</span><span class="nm">1 год</span><span class="pr">2 090 <small>₽</small></span><span class="per">≈ 174 ₽ в месяц</span><a class="btn primary buy" data-plan="1 год — 2 090 ₽" href="https://t.me/supp0rt_4uilive_twitch">Купить в Telegram</a></div>
+  </div>
+  <p class="trial">Сначала попробуй: <b>7 дней бесплатно</b> с полным набором функций. Ключ подписки привязывается к одному компьютеру.</p>
+</div></section>
+
+<section id="install"><div class="wrap">
+  <h2>Установка за минуту</h2>
+  <p class="sub">Нужен компьютер с Windows 10 или 11 (64-бит).</p>
+  <div class="steps">
+    <div class="step"><h3>Скачай</h3><p>Кнопка «Скачать для Windows» вверху страницы — файл 4UILIVE-Stats-Setup.</p></div>
+    <div class="step"><h3>Запусти установщик</h3><p>Если Windows покажет синее окно — нажми «Подробнее» → «Выполнить в любом случае» (см. ниже).</p></div>
+    <div class="step"><h3>Войди через Twitch</h3><p>Программа покажет код — подтверди его на twitch.tv/activate. Без паролей и ключей.</p></div>
+    <div class="step"><h3>Стримь</h3><p>Держи программу открытой (можно свёрнутой) — эфир запишется сам. Обновления приходят сами.</p></div>
+  </div>
+  <div class="warn">
+    <div class="ss"><div class="t">Windows защитил ваш компьютер</div>Фильтр SmartScreen предотвратил запуск неопознанного приложения…<br><span class="l">Подробнее</span><div class="r"><span class="hl">Выполнить в любом случае</span><span>Не выполнять</span></div></div>
+    <div><b>Почему Windows предупреждает?</b><br>Так Windows реагирует на любую программу без платной цифровой подписи от крупной компании — это не значит, что в ней что-то не так. Нажми <b>«Подробнее»</b>, затем <b>«Выполнить в любом случае»</b>. Программа ставится только для твоей учётной записи и не трогает системные файлы.</div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Вопросы</h2>
+  <div class="faq" style="margin-top:24px">
+    <details><summary>Где хранятся мои данные?</summary><p>Только у тебя на компьютере — в папке «Документы\4UILIVE Stats». Раз в день программа сама делает резервную копию. Никакие данные никуда не отправляются.</p></details>
+    <details><summary>Нужно ли давать пароль от Twitch?</summary><p>Нет. Вход идёт через официальную страницу Twitch: ты подтверждаешь код, и программа получает доступ только на чтение статистики. Отключить можно в любой момент.</p></details>
+    <details><summary>Как подключить донаты?</summary><p>DonatePay и DonateX — вставить токен из личного кабинета. DonationAlerts — создать своё бесплатное приложение на их сайте (2 минуты, пошаговая инструкция есть в программе).</p></details>
+    <details><summary>Что будет, если программа закрыта во время стрима?</summary><p>Пока она закрыта, онлайн не записывается. Открой её — запись продолжится с этого момента, а после эфира стрим всё равно появится в таблице.</p></details>
+    <details><summary>Можно показывать программу на стриме?</summary><p>Да: кнопка-глазик в шапке (или клавиша H) прячет все суммы — в программе и в панели OBS.</p></details>
+    <details><summary>Как обновлять программу?</summary><p>Никак — она сама скачивает новые версии и предлагает перезапуститься. Твои данные при обновлении не меняются.</p></details>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="final">
+  <h2>Попробуй 7 дней бесплатно</h2>
+  <p class="sub" style="margin:0 auto 26px">Скачай, войди через Twitch — и следующий эфир запишется сам.</p>
+  <div class="cta"><a class="btn primary dl" href="https://github.com/4UILIVE/4uilive-stats/releases/latest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Скачать для Windows</a><a class="btn tg" href="https://t.me/supp0rt_4uilive_twitch">Написать в Telegram</a></div>
+</div></div>
+</main>
+
+<footer><div class="wrap">
+  <span><span class="brand">4UI<b>LIVE</b> Stats</span> · © 2026</span>
+  <span>Поддержка и покупка: <a href="https://t.me/supp0rt_4uilive_twitch">@supp0rt_4uilive_twitch</a> · <a href="https://github.com/4UILIVE/4uilive-stats/releases">Все версии</a></span>
+</div></footer>
+
+<script>
+// ссылки «Купить» — сразу с готовым сообщением
+document.querySelectorAll("a.buy").forEach(function(a){
+  var p=a.getAttribute("data-plan");
+  var t="Здравствуйте! Хочу купить подписку 4UILIVE Stats"+(p?": "+p:"")+".";
+  a.href="https://t.me/supp0rt_4uilive_twitch?text="+encodeURIComponent(t); a.target="_blank"; a.rel="noopener";
+});
+// кнопка «Скачать» — прямая ссылка на установщик последней версии с GitHub
+fetch("https://api.github.com/repos/4UILIVE/4uilive-stats/releases/latest").then(function(r){ return r.ok? r.json() : null; }).then(function(j){
+  if(!j||!j.assets) return;
+  var exe=j.assets.filter(function(a){ return /\.exe$/i.test(a.name); })[0]; if(!exe) return;
+  document.querySelectorAll("a.dl").forEach(function(a){ a.href=exe.browser_download_url; });
+  var v=String(j.tag_name||"").replace(/^v/,""), mb=Math.round(exe.size/1048576);
+  document.getElementById("dlText").textContent="Скачать версию "+v;
+  document.getElementById("dlInfo").textContent="Windows 10/11 · "+mb+" МБ · 7 дней бесплатно, без карты и регистрации. Дальше — от 249 ₽ в месяц.";
+}).catch(function(){});
+</script>
+</body>
+</html>
