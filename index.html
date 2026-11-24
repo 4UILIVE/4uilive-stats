@@ -42,9 +42,9 @@ h1 em{font-style:normal;color:var(--ac)}
 .lead{font-size:clamp(17px,2vw,20px);color:var(--t2);max-width:700px;margin:0 0 30px}
 .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .cta small{color:var(--mu);font-size:14px;width:100%;margin-top:4px}
-.shot{margin-top:56px;position:relative}
-.shot img.main{display:block;width:100%;border-radius:16px;border:1px solid var(--line);box-shadow:0 40px 100px #000a}
-.shot img.obs{position:absolute;right:-18px;bottom:-34px;width:clamp(150px,22%,250px);border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 60px #000c}
+.shot{margin-top:56px;position:relative;width:min(1320px,calc(100vw - 48px));left:50%;transform:translateX(-50%)}
+.shot picture{display:block}.shot img.main{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);box-shadow:0 40px 100px #000a}
+.shot img.obs{position:absolute;right:-18px;bottom:-34px;width:clamp(150px,19%,250px);height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 60px #000c}
 .shot .tag{position:absolute;left:18px;bottom:-18px;background:var(--sf2);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:14px;color:var(--t2)}
 section{padding:90px 0 0}
 h2{font-family:Bahnschrift,"Segoe UI",sans-serif;font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:0 0 12px}
@@ -61,7 +61,7 @@ h2{font-family:Bahnschrift,"Segoe UI",sans-serif;font-size:clamp(28px,3.6vw,40px
 .list li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:color-mix(in srgb,var(--ok) 18%,transparent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%238fcf7a' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
 .list b{color:var(--text)}
 .obsbox{display:flex;justify-content:center}
-.obsbox img{width:min(300px,100%);border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 80px #000b}
+.obsbox img{width:min(320px,100%);height:auto;border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 80px #000b}
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .plan{position:relative;background:var(--sf);border:1px solid var(--line);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;gap:6px}
 .plan.best{border-color:var(--ac);background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 12%,var(--sf)),var(--sf))}
@@ -118,9 +118,9 @@ footer a{color:var(--t2)}
     <small id="dlInfo">7 дней бесплатно, без карты и регистрации. Дальше — от 249 ₽ в месяц.</small>
   </div>
   <div class="shot">
-    <img class="main" src="screen-main.jpg" alt="Главный экран 4UILIVE Stats во время эфира" width="1366" height="900">
-    <img class="obs" src="screen-obs.jpg" alt="Панель для OBS" width="320" height="560" loading="lazy">
-    <span class="tag">👁 Суммы скрыты одной кнопкой — можно показывать на стриме</span>
+    <picture><source srcset="screen-main.webp" type="image/webp"><img class="main" src="screen-main.jpg" alt="Главный экран 4UILIVE Stats во время эфира" width="1440" height="900"></picture>
+    <picture><source srcset="screen-obs.webp" type="image/webp"><img class="obs" src="screen-obs.jpg" alt="Панель для OBS" width="340" height="666" loading="lazy"></picture>
+    <span class="tag">👁 Суммы прячутся одной кнопкой — можно показывать программу на стриме</span>
   </div>
 </div></div>
 
@@ -148,7 +148,7 @@ footer a{color:var(--t2)}
       <li><span><b>Глазик</b> прячет все суммы — в программе и в OBS, — чтобы не светить доход на стриме</span></li>
     </ul>
   </div>
-  <div class="obsbox"><img src="screen-obs.jpg" alt="Панель 4UILIVE Stats в OBS" width="320" height="560" loading="lazy"></div>
+  <div class="obsbox"><picture><source srcset="screen-obs.webp" type="image/webp"><img src="screen-obs.jpg" alt="Панель 4UILIVE Stats в OBS" width="340" height="666" loading="lazy"></picture></div>
 </div></section>
 
 <section id="price"><div class="wrap">
