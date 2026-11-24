@@ -40,7 +40,7 @@ header nav a:hover{color:var(--text)}
 @keyframes pulse{0%{box-shadow:0 0 0 0 #ff5c5caa}70%{box-shadow:0 0 0 9px #ff5c5c00}100%{box-shadow:0 0 0 0 #ff5c5c00}}
 h1{font-family:Bahnschrift,"Segoe UI",sans-serif;font-size:clamp(36px,5.6vw,64px);line-height:1.05;margin:22px 0 18px;letter-spacing:-.01em;max-width:860px}
 h1 em{font-style:normal;color:var(--ac)}
-.lead{font-size:clamp(17px,2vw,20px);color:var(--t2);max-width:700px;margin:0 0 30px}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--t2);max-width:780px;margin:0 0 30px}
 .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .cta small{color:var(--mu);font-size:14px;width:100%;margin-top:4px}
 .shot{margin:56px auto 0;position:relative;width:min(1320px,calc(100vw - 48px))}
@@ -97,7 +97,7 @@ details p{margin:10px 0 0;color:var(--t2);font-size:15px}
 footer{padding:50px 0 40px;color:var(--mu);font-size:14px}
 footer .wrap{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}
 footer a{color:var(--t2)}
-.hl{display:flex;flex-wrap:wrap;gap:10px;margin:-8px 0 30px}
+.hl{display:grid;grid-template-columns:repeat(2,max-content);gap:10px;margin:-8px 0 30px}
 .hl span{display:inline-flex;align-items:center;gap:8px;background:var(--sf);border:1px solid var(--line);border-radius:10px;padding:7px 13px;font-size:14.5px;color:var(--t2)}
 .hl span b{color:var(--text);font-weight:600}
 .hl svg{width:18px;height:18px;color:var(--ac);flex:none}
@@ -115,7 +115,7 @@ details[open]{border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
 .reveal.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.2,1)}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.kicker i{animation:none}}
 @media(max-width:900px){.grid,.plans,.steps,.faq{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}header nav{display:none}.shot .obs{display:none}.warn{flex-direction:column}}
-@media(max-width:600px){.grid,.plans,.steps,.faq{grid-template-columns:1fr}.hero{padding-top:50px}}
+@media(max-width:600px){.hl{grid-template-columns:1fr}.grid,.plans,.steps,.faq{grid-template-columns:1fr}.hero{padding-top:50px}}
 </style>
 </head>
 <body>
@@ -129,10 +129,11 @@ details[open]{border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
 <div class="hero"><div class="wrap">
   <span class="kicker"><i></i>Для Twitch-стримеров · Windows 10 и 11</span>
   <h1>Узнай, что на самом деле <em>приводит зрителей</em> на твои стримы</h1>
-  <p class="lead">4UILIVE Stats связывает твои ролики в Shorts и TikTok, видео на YouTube и посты в Telegram со стримами — и показывает, после чего приходит больше зрителей и фолловеров. А во время эфира держит живую плашку прямо в OBS: место среди стримеров категории, онлайн, фолловеры и донаты.</p>
+  <p class="lead">4UILIVE Stats связывает твои ролики в Shorts и TikTok, видео на YouTube и посты в Telegram со стримами — и показывает, после чего приходит больше зрителей и фолловеров. Аналитика подскажет, какой формат стрима, день недели и время запуска дают лучший онлайн. А во время эфира — живая плашка прямо в OBS: место среди стримеров категории, онлайн, фолловеры и донаты.</p>
   <div class="hl">
     <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16"/><path d="M7.5 15l3.5-4.5 3 2.5 5-6.5"/></svg><b>Влияние соцсетей</b> на каждый стрим</span>
     <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0z"/><path d="M17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/></svg><b>Место в категории</b> в реальном времени</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><b>Аналитика</b> формата, дня недели и времени старта</span>
     <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M8 21h8M14 4v14"/></svg><b>Плашка в OBS</b> — не надо сворачивать игру</span>
   </div>
   <div class="cta">
@@ -155,7 +156,7 @@ details[open]{border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7.5 15l3.5-4.5 3 2.5 5-6.5"/></svg></div><h3>Стримы записываются сами</h3><p>Каждую минуту: онлайн, новые фолловеры, участники чата, сабы, рейды. Эфир закончился — он уже в таблице.</p></div>
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0z"/><path d="M17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/></svg></div><h3>Место в категории</h3><p>Каким по счёту ты идёшь среди стримеров своей игры и языка — прямо во время эфира и в среднем за стрим.</p></div>
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.4c-.4-.9-1.4-1.5-2.6-1.5-1.5 0-2.6.8-2.6 2s1.2 1.6 2.6 2 2.6.8 2.6 2-1.1 2-2.6 2c-1.2 0-2.2-.6-2.7-1.5M12 6.3v11.4"/></svg></div><h3>Донаты и деньги</h3><p>DonationAlerts, DonatePay и DonateX: вся история, топ донатеров, суммы чистыми после комиссии, цель на месяц.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></div><h3>Когда стримить лучше</h3><p>Лучшее время старта, сравнение игр и форматов, графики по месяцам и подсказки, что работает.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></div><h3>Аналитика: когда и как стримить</h3><p>Какой формат, игра, день недели и время запуска дают больше зрителей и фолловеров — с тепловой картой лучшего времени и готовыми выводами.</p></div>
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg></div><h3>Итоги месяца картинкой</h3><p>Онлайн, фолловеры, лучший стрим и рост к прошлому месяцу — готовый пост для Telegram, ВК или сторис.</p></div>
   </div>
 </div></section>
