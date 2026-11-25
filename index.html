@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>4UILIVE Stats — что приводит зрителей на твои стримы</title>
-<meta name="description" content="Программа для Twitch-стримеров: показывает, как ролики, YouTube и Telegram влияют на твои стримы, и выводит в OBS живую плашку с местом в категории, онлайном и фолловерами.">
+<meta name="description" content="Программа для Twitch-стримеров: показывает, как ролики, YouTube и Telegram влияют на стримы, сравнивает стримы между собой и выводит в OBS живую плашку с местом в категории, онлайном и донатами. 7 дней бесплатно.">
 <meta property="og:title" content="4UILIVE Stats — статистика Twitch-стримов">
 <meta property="og:description" content="Онлайн, фолловеры, место в категории, донаты и соцсети — всё записывается само. 7 дней бесплатно.">
 <meta property="og:image" content="img/main-1.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e39b4f'/%3E%3Cpath d='M7 22l6-7 4 4 8-10' fill='none' stroke='%2316120e' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAG7klEQVR4nN2bX4xcVR3HP+fcO/92Z2d2ZsfZdZdqCkQwNDU8lEii0KYE46baWkqsqBD/xAdMUJpotIjxwWKURB+aiBE1VioQaCIVKSQlpSU+VKIYAgLGkIi03R1ndmZndnf+33N86Ha7f+6dvbNz78zUz9PMufee+zvfe+453/ObOQIXpNPprUrJ3cB24P3ABBBzc20XKQHngQtCiNNSquOZTOb19S4SrQ6mUqOfFkIc0potnobaJYTgDa31wVwu86zjOXaFyeT4JinVUeAWXyPsHmeUMr6Qz58/t/rAGgGSydGPSin+AIx1LbzukBVC7Mtmp15eXrhCgGQyfbOU8hQQ7np43aGqlN6Rz2fOXipYEiCVSo2D8QqIiZ6F1x2mlZI35fMX3gMwL5ebTyyO7lc8QeD2cIhPhINcZ5qkpaSkFL8uVzhSro5JqX4H7OBSDxgZGd0thHim14F7wW2hIA/Fo2w2DNvj986WeLpSA9iVy00/JwGkFD/scpy+cPdAmMeTccfGA3w2sjS8PQQg0+n0R67UeX45O0NBHo4PtTY2gHX549ZEYnSLXHR4VzRhIfhxPIp0ce6RcmXps2nK3WavzY4A7hkIsycSZkFrfrlQ4Uyt3lYde8IhPujQ7ZtaM6U071oWv1mocKJ6uW6t2W4CV3Xcig74USzKVwYjS99vCwW5Y2aWP9cbruvYGwnZlp+o1rm/WCKvtMOVekIC421H7RHfHhpc0XgACXxpVVkrDCG4ORhYU17WmvtaNh6AcQkMtRO0V3x1MMK3ogO2x94n3bzNF9lsSMJi7dB3plan2LrxAHH3d/KQvZEwh2JRT+q6yuHdf6tp2ZavpusC3BoKcnh4yLMbRx3mvZn1nz50W4BtgQCPJWIEPazTrvsDVLVydX3XBPhwwOT3yTgRh4A3Sqe1dUWACUPyRCJOQnrbeC/wXYARKTmWHGbC6Ml4uy6+RhWTkmMjw1xr2o/U/7bcjdR+4psAYSE4moixxaHxOaXYny/6dXvX+CKAIQSPDMdsHRpASSnunJnlHZdztZ94LoAAfhqPsitsP9lVtebzhRJv9EHj8UOAH8Si3BWxz6k2tObLhRJn21jo+I2nAnwzOsi9DgsZDRwoznOyzaWu33gmwP6BMAeH7Bc3AN8vzfNkperV7TzDEwEmw0F+Fos6urKH58v8YqHicLS3mC7OacnHggEeTcQdK/ptucpP5hY6vY1vdNQDbgyYPJaMOy5unqvW+U5pvpNb+M6Ge8DV5sXFTdRhcfNyrc7XCkX6Y7JzZkM9YNyQHEvGHTM3r9Yb3F0o0V/jvT1tC5CUkqeTw2xyWNy83Wiyv1BkQbtLSPSatgSILPr7Dzn4+/OW4nOFIgWX2Zh+wPUYEASOJmJsc/D3AGfqdfY6uMB2mDAk9zkkTP+rFH+q1Jj3qIe5FuDw8BC3hFons5wscLt8wDB4cGjQ8fiB6ACTuVlyyl3aqxWuXoFtwYAnT9YrNhsGX2/jt4NWuBJgcx9mc642O/Zw4FaAvzeadN7ZvOXVhjcrSlcC/Ktp8b3iPI0+mdpO1uo8Ml/2pC7X/ejRcoVnqjWuD5ierqGPJGIMrnKT/7EsDhTtLXRGKd5uNJe+DzmYsTmXz6qtFymrFFmP1/PTluKaVb4iLSWv1BtUXPS4rQH7Jky7TLj2fHT7p01qLCwE+wfWn3WSUvIpm6lZLb62bui5AM9Xa7blD0QHuc7BcQKYQnB4eIiYzSvw10bTtUfouQAv1GrM2XT1uBQ8O5LgM5HwmkTLNabBU4kYtzsYs6fK7pMvIpUa6/nQfn90gIMtnN+Upfhbo8GC0lxrGtwYDDg+uXeaFh/PFVzPWH0hQEQInk8Nc0OH5qapNXfmi239vabnrwBARWu+mC+S7dDbPzi30Fbj6RcBAN6zFJ/Mza6Y491SB74xO8evNpB4lYs7LfqCdy2LyZlZfr5QcZ1NOltvMJkr8PiGUu56VqRSY28B12/gal/ZZEj2RcJMhkPcYBoElrnFKUvxYq3OH6s1TndmzN4UqdTYi8BOL4L2C7H4z7GggKylsHcOG6hXiJNSCHHao/p8Qy9mgs552HgApdRLUkp13MM6ryi0FsdlJpN5XWvW3V72/4d4LZ+fflMCCKEf6HU43UYI/V1W7hkaOw3c2tOousepXG56JyuNUPMu0Od7GFS3mFbKuOfSlyUBcrncBaXYB/Tfj/jeUdFa71m+gXKFFc7nM2eV0juAqZ6E5y9TWusdMzOZvywvXLMWuCiCcRPQ9/6gDU5pbW5b3XhcbJ7eBeIQsNXX8HxDvCaEPpjNTp9wPMNNNYnE6BbTlLu1Zjvo8cVtNv24ff4ciAtCqJcsSxzP56f/sd5F/wNOTD/iiUemxQAAAABJRU5ErkJggg==">
 <style>
-:root{--bg:#14110d;--bg2:#1b1712;--sf:#221d17;--sf2:#2c251d;--line:#3a3128;--text:#f5ede2;--t2:#d6c9b7;--mu:#a29481;--ac:#e39b4f;--ac2:#f2c072;--ok:#8fcf7a;--tw:#9146ff;--tg:#2aa3e0}
+:root{--bg:#0b0b0d;--bg2:#0f0f12;--sf:#141417;--sf2:#1c1c21;--line:#2d2d34;--text:#f6f6f8;--t2:#d0d0d7;--mu:#8e8e99;--ac:#f2353b;--ac2:#ff5a5f;--ok:#4fd18b;--tw:#9146ff;--tg:#2aa3e0}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 "Segoe UI",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
@@ -26,14 +26,14 @@ header nav a{text-decoration:none;color:var(--t2);font-size:15px}
 header nav a:hover{color:var(--text)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none;border:1px solid var(--line);background:var(--sf);color:var(--text);transition:transform .15s,background .2s,border-color .2s;cursor:pointer;white-space:nowrap}
 .btn:hover{transform:translateY(-1px);border-color:var(--ac)}
-.btn.primary{background:var(--ac);border-color:var(--ac);color:#1a1209}
+.btn.primary{background:var(--ac);border-color:var(--ac);color:#ffffff}
 .btn.primary:hover{background:var(--ac2);border-color:var(--ac2)}
 .btn.tg{background:var(--tg);border-color:var(--tg);color:#fff}
 .btn.small{padding:8px 16px;font-size:14px;border-radius:10px}
 .btn svg{width:20px;height:20px;flex:none}
 .hero{position:relative;padding:84px 0 40px;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:-200px -100px auto auto;width:760px;height:760px;background:radial-gradient(circle,color-mix(in srgb,var(--ac) 26%,transparent),transparent 65%);pointer-events:none}
-.hero::after{content:"";position:absolute;left:-260px;top:220px;width:640px;height:640px;background:radial-gradient(circle,#1a9a8822,transparent 65%);pointer-events:none}
+.hero::after{content:"";position:absolute;left:-260px;top:220px;width:640px;height:640px;background:radial-gradient(circle,#ffffff0d,transparent 65%);pointer-events:none}
 .hero .wrap{position:relative;z-index:1}
 .kicker{display:inline-flex;align-items:center;gap:8px;background:var(--sf);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:14px;color:var(--t2)}
 .kicker i{width:8px;height:8px;border-radius:50%;background:#ff5c5c;animation:pulse 1.6s ease-out infinite}
@@ -59,14 +59,14 @@ h2{font-family:Bahnschrift,"Segoe UI",sans-serif;font-size:clamp(28px,3.6vw,40px
 .split{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 .list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
 .list li{display:flex;gap:12px;color:var(--t2)}
-.list li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:color-mix(in srgb,var(--ok) 18%,transparent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%238fcf7a' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.list li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:color-mix(in srgb,var(--ac) 18%,transparent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23ff5a5f' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
 .list b{color:var(--text)}
 .obsbox{display:flex;justify-content:center}
 .obsbox img{display:block;width:320px;max-width:100%;height:auto;border-radius:14px;box-shadow:0 0 0 1px var(--line),0 30px 80px #000b}
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .plan{position:relative;background:var(--sf);border:1px solid var(--line);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;gap:6px}
 .plan.best{border-color:var(--ac);background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 12%,var(--sf)),var(--sf))}
-.plan .badge{position:absolute;top:-12px;right:20px;background:var(--ac);color:#1a1209;font-weight:700;font-size:13px;border-radius:99px;padding:3px 12px}
+.plan .badge{position:absolute;top:-12px;right:20px;background:var(--ac);color:#ffffff;font-weight:700;font-size:13px;border-radius:99px;padding:3px 12px}
 .plan .nm{color:var(--t2);font-weight:600}
 .plan .pr{font-family:Bahnschrift,"Segoe UI",sans-serif;font-size:44px;font-weight:700;line-height:1.1}
 .plan .pr small{font-size:18px;color:var(--mu);font-weight:400}
@@ -101,27 +101,40 @@ footer a{color:var(--t2)}
 .hl span{display:inline-flex;align-items:center;gap:8px;background:var(--sf);border:1px solid var(--line);border-radius:10px;padding:7px 13px;font-size:14.5px;color:var(--t2)}
 .hl span b{color:var(--text);font-weight:600}
 .hl svg{width:18px;height:18px;color:var(--ac);flex:none}
+.brand{display:inline-flex;align-items:center;gap:10px}
+.brand .mark{width:30px;height:30px;border-radius:8px;flex:none;box-shadow:0 0 0 1px #ffffff14}
+footer .brand .mark{width:20px;height:20px;border-radius:5px}
+.cmphead{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-bottom:30px}
+.cmphead .sub{margin-bottom:0}
+.cmpbox{position:relative;max-width:1000px;margin:0 auto}
+.cmpbox .cmpimg{display:block;width:100%;height:auto;border-radius:16px 16px 0 0;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
+.cmpbox .drag{position:absolute;right:-70px;bottom:-30px;width:40%;height:auto;border-radius:12px;box-shadow:0 0 0 1px var(--line),0 24px 60px #000e}
+.newtag{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;letter-spacing:.04em;color:#fff;background:var(--ac);border-radius:99px;padding:2px 8px;vertical-align:3px}
 /* наведение */
 .card,.plan,.step,details{transition:transform .25s ease,border-color .25s,box-shadow .25s,background .25s}
 .card .ic{transition:background .25s,color .25s,transform .25s}
 .card:hover,.step:hover,.plan:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--ac) 55%,var(--line));box-shadow:0 22px 44px #0008,0 0 30px color-mix(in srgb,var(--ac) 14%,transparent)}
-.card:hover .ic{background:var(--ac);color:#1a1209;transform:scale(1.06)}
-.step:hover::before{background:var(--ac);color:#1a1209;border-color:var(--ac)}
+.card:hover .ic{background:var(--ac);color:#ffffff;transform:scale(1.06)}
+.step:hover::before{background:var(--ac);color:#ffffff;border-color:var(--ac)}
 details:hover{border-color:color-mix(in srgb,var(--ac) 50%,var(--line))}
 details[open]{border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
 .list li{transition:transform .2s}.list li:hover{transform:translateX(4px)}
 /* появление при прокрутке */
 .reveal{opacity:0;transform:translateY(28px)}
 .reveal.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.2,1)}
+/* плитки в стиле окна знакомства в программе: мягкий градиент, свечение в правом верхнем углу, крупное скругление, глубокая тень */
+.card,.plan,.step,details{background:radial-gradient(320px circle at 100% 0,color-mix(in srgb,var(--ac) 24%,transparent),transparent 70%),linear-gradient(180deg,var(--sf2),var(--sf) 60%);border-radius:20px;box-shadow:0 18px 50px #0006}
+.plan.best{background:radial-gradient(360px circle at 100% 0,color-mix(in srgb,var(--ac) 34%,transparent),transparent 70%),linear-gradient(180deg,color-mix(in srgb,var(--ac) 10%,var(--sf2)),var(--sf) 60%)}
+details{border-radius:16px}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.kicker i{animation:none}}
-@media(max-width:900px){.grid,.plans,.steps,.faq{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}header nav{display:none}.shot .obs{display:none}.warn{flex-direction:column}}
+@media(max-width:900px){.grid,.plans,.steps,.faq{grid-template-columns:1fr 1fr}.split,.cmphead{grid-template-columns:1fr}.hl{grid-template-columns:1fr}.cmpbox .drag{display:none}header nav{display:none}.shot .obs{display:none}.warn{flex-direction:column}}
 @media(max-width:600px){.hl{grid-template-columns:1fr}.grid,.plans,.steps,.faq{grid-template-columns:1fr}.hero{padding-top:50px}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <a class="brand" href="#">4UI<b>LIVE</b> Stats</a>
-  <nav><a href="#features">Возможности</a><a href="#obs">Панель OBS</a><a href="#price">Цены</a><a href="#install">Установка</a><a href="#faq">Вопросы</a></nav>
+  <a class="brand" href="#"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><rect width="200" height="200" rx="44" fill="#141418"/><path transform="translate(-3 4)" d="M184 24 Q164 24 164 50 V124 a26 26 0 0 1 -52 0 V40 L42 116 H140" fill="none" stroke="#FF2D2D" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/></svg><span>4UI<b>LIVE</b> Stats</span></a>
+  <nav><a href="#features">Возможности</a><a href="#compare">Сравнение</a><a href="#obs">Панель OBS</a><a href="#price">Цены</a><a href="#install">Установка</a><a href="#faq">Вопросы</a></nav>
   <a class="btn small primary dl" href="https://github.com/4UILIVE/4uilive-stats/releases/latest">Скачать</a>
 </div></header>
 
@@ -135,6 +148,8 @@ details[open]{border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
     <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0z"/><path d="M17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/></svg><b>Место в категории</b> в реальном времени</span>
     <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><b>Аналитика</b> формата, дня недели и времени старта</span>
     <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M8 21h8M14 4v14"/></svg><b>Плашка в OBS</b> — не надо сворачивать игру</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><b>Сравнение стримов</b> — выдели и перетащи</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14"/></svg><b>Прошлые стримы</b> подтянутся с Twitch</span>
   </div>
   <div class="cta">
     <a class="btn primary dl" id="dlMain" href="https://github.com/4UILIVE/4uilive-stats/releases/latest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg><span id="dlText">Скачать для Windows</span></a>
@@ -143,7 +158,7 @@ details[open]{border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
 </div>
   <div class="shot">
     <picture><source type="image/webp" srcset="img/main-1.webp 1320w, img/main-1_5.webp 1980w, img/main-2.webp 2640w" sizes="(min-width:1368px) 1320px, calc(100vw - 48px)"><img class="main" src="img/main-1.jpg" alt="Главный экран 4UILIVE Stats во время эфира" width="1320" height="826"></picture>
-    <picture class="obs"><source type="image/webp" srcset="img/dock260-1.webp 1x, img/dock260-2.webp 2x, img/dock260-3.webp 3x"><img src="img/dock260-1.webp" alt="Плашка 4UILIVE Stats в OBS" width="260" height="729"></picture>
+    <picture class="obs"><source type="image/webp" srcset="img/dock260-1.webp 1x, img/dock260-2.webp 2x, img/dock260-3.webp 3x"><img src="img/dock260-1.webp" alt="Плашка 4UILIVE Stats в OBS" width="260" height="750"></picture>
     <span class="tag">👁 Суммы прячутся одной кнопкой — можно показывать программу на стриме</span>
   </div>
 </div>
@@ -158,6 +173,28 @@ details[open]{border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.4c-.4-.9-1.4-1.5-2.6-1.5-1.5 0-2.6.8-2.6 2s1.2 1.6 2.6 2 2.6.8 2.6 2-1.1 2-2.6 2c-1.2 0-2.2-.6-2.7-1.5M12 6.3v11.4"/></svg></div><h3>Донаты и деньги</h3><p>DonationAlerts, DonatePay и DonateX: вся история, топ донатеров, суммы чистыми после комиссии, цель на месяц.</p></div>
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></div><h3>Аналитика: когда и как стримить</h3><p>Какой формат, игра, день недели и время запуска дают больше зрителей и фолловеров — с тепловой картой лучшего времени и готовыми выводами.</p></div>
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg></div><h3>Итоги месяца картинкой</h3><p>Онлайн, фолловеры, лучший стрим и рост к прошлому месяцу — готовый пост для Telegram, ВК или сторис.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Сравни любые стримы<span class="newtag">НОВОЕ</span></h3><p>Выдели несколько стримов и перетащи на «Сравнить» — откроется таблица только с ними: кто лучше по онлайну, фолловерам, донатам и месту в категории.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14"/></svg></div><h3>Прошлые стримы — сразу</h3><p>Сразу после входа через Twitch программа подтянет стримы за последние дни из записей трансляций: дату, время, название, фолловеров и донаты.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0012 3z"/></svg></div><h3>Разберёшься за минуту</h3><p>При первом запуске — короткое знакомство и подсказки по каждой вкладке. Понятные настройки по разделам, срок подписки всегда виден в шапке.</p></div>
+  </div>
+</div></section>
+
+<section id="compare"><div class="wrap">
+  <div class="cmphead">
+    <div>
+      <h2>Какой стрим зашёл лучше — видно сразу</h2>
+      <p class="sub">Выдели стримы в таблице и просто перетащи их. Экран размоется, появятся две кнопки: «Сравнить» и «Удалить».</p>
+    </div>
+    <ul class="list">
+      <li><span><b>Ctrl + клик</b> — выделить несколько стримов, <b>Shift + клик</b> — сразу диапазон</span></li>
+      <li><span><b>Зажми и потяни</b> — стримы сожмутся в стопку; брось её на нужную кнопку. Esc — отмена</span></li>
+      <li><span><b>Таблица сравнения</b>: онлайн, пик, зрители, чат, фолловеры, сабы, место в категории, донаты — у каждого стрима свой цвет</span></li>
+      <li><span>Лучшее значение отмечено ★, рядом — <b>на сколько процентов выше или ниже среднего</b>, внизу — лидер 🏆</span></li>
+    </ul>
+  </div>
+  <div class="cmpbox">
+    <picture><source type="image/webp" srcset="img/cmp-1.webp 1x, img/cmp-2.webp 2x"><img class="cmpimg" src="img/cmp-1.webp" alt="Окно сравнения выбранных стримов" width="1180" height="740" loading="lazy"></picture>
+    <picture><source type="image/webp" srcset="img/drag-1.webp 1x, img/drag-2.webp 2x"><img class="drag" src="img/drag-1.webp" alt="Перетаскивание стримов на «Сравнить» или «Удалить»" width="1320" height="826" loading="lazy"></picture>
   </div>
 </div></section>
 
@@ -172,7 +209,7 @@ details[open]{border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
       <li><span><b>Глазик</b> прячет все суммы — в программе и в OBS, — чтобы не светить доход на стриме</span></li>
     </ul>
   </div>
-  <div class="obsbox"><picture><source type="image/webp" srcset="img/dock320-1.webp 1x, img/dock320-2.webp 2x, img/dock320-3.webp 3x"><img src="img/dock320-1.jpg" alt="Плашка 4UILIVE Stats в OBS" width="320" height="683" loading="lazy"></picture></div>
+  <div class="obsbox"><picture><source type="image/webp" srcset="img/dock320-1.webp 1x, img/dock320-2.webp 2x, img/dock320-3.webp 3x"><img src="img/dock320-1.jpg" alt="Плашка 4UILIVE Stats в OBS" width="320" height="703" loading="lazy"></picture></div>
 </div></section>
 
 <section id="price"><div class="wrap">
@@ -192,7 +229,7 @@ details[open]{border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
   <div class="steps">
     <div class="step"><h3>Скачай</h3><p>Кнопка «Скачать для Windows» вверху страницы — файл 4UILIVE-Stats-Setup.</p></div>
     <div class="step"><h3>Запусти установщик</h3><p>Если Windows покажет синее окно — нажми «Подробнее» → «Выполнить в любом случае» (см. ниже).</p></div>
-    <div class="step"><h3>Войди через Twitch</h3><p>Программа покажет код — подтверди его на twitch.tv/activate. Без паролей и ключей.</p></div>
+    <div class="step"><h3>Войди через Twitch</h3><p>Программа покажет код — подтверди его на twitch.tv/activate. Без паролей и ключей. Стримы за последние дни подтянутся сами.</p></div>
     <div class="step"><h3>Стримь</h3><p>Держи программу открытой (можно свёрнутой) — эфир запишется сам. Обновления приходят сами.</p></div>
   </div>
   <div class="warn">
@@ -210,6 +247,8 @@ details[open]{border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
     <details><summary>Что будет, если программа закрыта во время стрима?</summary><p>Пока она закрыта, онлайн не записывается. Открой её — запись продолжится с этого момента, а после эфира стрим всё равно появится в таблице.</p></details>
     <details><summary>Можно показывать программу на стриме?</summary><p>Да: кнопка-глазик в шапке (или клавиша H) прячет все суммы — в программе и в панели OBS.</p></details>
     <details><summary>Как обновлять программу?</summary><p>Никак — она сама скачивает новые версии и предлагает перезапуститься. Твои данные при обновлении не меняются.</p></details>
+    <details><summary>Подтянутся ли мои прошлые стримы?</summary><p>Да, за последние дни: сразу после входа через Twitch программа возьмёт их из записей трансляций (Twitch хранит записи 7 дней, у партнёров — 60, и только если в настройках канала включено «Сохранять прошлые трансляции»). Более старые стримы можно внести вручную.</p></details>
+    <details><summary>Как сравнить два конкретных стрима?</summary><p>Выдели их в таблице (Ctrl + клик), зажми мышку на выделенных и перетащи на «Сравнить». Откроется окно, где сравниваются только они — с лучшими результатами и лидером.</p></details>
   </div>
 </div></section>
 
@@ -221,7 +260,7 @@ details[open]{border-color:color-mix(in srgb,var(--ac) 40%,var(--line))}
 </main>
 
 <footer><div class="wrap">
-  <span><span class="brand">4UI<b>LIVE</b> Stats</span> · © 2026</span>
+  <span><span class="brand"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><rect width="200" height="200" rx="44" fill="#141418"/><path transform="translate(-3 4)" d="M184 24 Q164 24 164 50 V124 a26 26 0 0 1 -52 0 V40 L42 116 H140" fill="none" stroke="#FF2D2D" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/></svg><span>4UI<b>LIVE</b> Stats</span></span> · © 2026</span>
   <span>Поддержка и покупка: <a href="https://t.me/supp0rt_4uilive_twitch">@supp0rt_4uilive_twitch</a> · <a href="https://github.com/4UILIVE/4uilive-stats/releases">Все версии</a></span>
 </div></footer>
 
@@ -244,7 +283,7 @@ fetch("https://api.github.com/repos/4UILIVE/4uilive-stats/releases/latest").then
 // плитки плавно выезжают при прокрутке
 (function(){
   if(!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  var els=[].slice.call(document.querySelectorAll(".shot,.card,.plan,.step,.faq details,.obsbox,#obs .split>div:first-child,section h2,section .sub,.warn,.final,.trial"));
+  var els=[].slice.call(document.querySelectorAll(".shot,.card,.plan,.step,.faq details,.obsbox,.cmpbox,.cmphead>*,#obs .split>div:first-child,section h2,section .sub,.warn,.final,.trial"));
   els.forEach(function(e){ e.classList.add("reveal"); });
   var io=new IntersectionObserver(function(list){ list.forEach(function(en){ if(!en.isIntersecting) return; var e=en.target;
     var sib=[].slice.call(e.parentNode.children).filter(function(c){ return c.classList.contains("reveal")||c.classList.contains("in"); }), i=Math.max(0,Math.min(sib.indexOf(e),6));
