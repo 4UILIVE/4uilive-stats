@@ -129,6 +129,43 @@ details{border-radius:16px}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.kicker i{animation:none}}
 @media(max-width:900px){.grid,.plans,.steps,.faq{grid-template-columns:1fr 1fr}.split,.cmphead{grid-template-columns:1fr}.hl{grid-template-columns:1fr}.cmpbox .drag{display:none}header nav{display:none}.shot .obs{display:none}.warn{flex-direction:column}}
 @media(max-width:600px){.hl{grid-template-columns:1fr}.grid,.plans,.steps,.faq{grid-template-columns:1fr}.hero{padding-top:50px}}
+
+/* ===== телефоны (с 2.42) ===== */
+.mobnote{display:none}
+@media(hover:none){.card:hover,.step:hover,.plan:hover,.btn:hover{transform:none}}
+@media(max-width:600px){
+ .wrap{padding-left:18px;padding-right:18px}
+ header .wrap{height:56px;gap:12px}
+ header .brand{font-size:18px}
+ .hero{padding:34px 0 24px}
+ .hero::before{width:420px;height:420px;inset:-120px -160px auto auto}
+ .kicker{font-size:12.5px;padding:5px 12px}
+ h1{font-size:clamp(30px,8.6vw,38px);margin:16px 0 14px}
+ .lead{font-size:16px;line-height:1.55;margin-bottom:22px}
+ .hl{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 24px}
+ .hl span{display:block;position:relative;padding:10px 10px 10px 36px;font-size:13px;line-height:1.35;border-radius:12px}
+ .hl span b{display:block;font-size:13.5px;margin-bottom:1px}
+ .hl svg{position:absolute;left:10px;top:11px;width:17px;height:17px}
+ .cta .btn{width:100%;padding:14px 18px}
+ .cta small{text-align:center}
+ .mobnote{display:flex;gap:10px;align-items:flex-start;margin-top:6px;background:color-mix(in srgb,var(--ac) 10%,var(--sf));border:1px solid color-mix(in srgb,var(--ac) 35%,var(--line));border-radius:12px;padding:11px 13px;font-size:13.5px;line-height:1.45;color:var(--t2)}
+ .mobnote a{color:var(--text)}
+ .mobnote svg{width:20px;height:20px;flex:none;color:var(--ac);margin-top:1px}
+ .shot{width:calc(100vw - 36px);margin-top:28px}
+ .shot img.main{border-radius:10px}
+ .shot .tag{position:static;display:block;margin-top:12px;font-size:13px;padding:8px 12px}
+ section{padding-top:56px}
+ section h2{font-size:clamp(26px,7.4vw,32px)}
+ .card{padding:20px}
+ .card h3{font-size:17px}
+ .card p{font-size:14.5px}
+ .grid,.plans,.steps,.faq{gap:12px}
+ .cmpbox .cmpimg{border-radius:12px 12px 0 0}
+ .obsbox img{width:min(300px,86vw)}
+ .final{margin-top:60px;padding:36px 18px;border-radius:18px}
+ .final .btn{width:100%}
+}
+@media(max-width:360px){ .hl{grid-template-columns:1fr} h1{font-size:28px} }
 </style>
 </head>
 <body>
@@ -154,6 +191,7 @@ details{border-radius:16px}
   <div class="cta">
     <a class="btn primary dl" id="dlMain" href="https://github.com/4UILIVE/4uilive-stats/releases/latest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg><span id="dlText">Скачать для Windows</span></a>
     <small id="dlInfo">7 дней бесплатно, без карты и регистрации. Дальше — от 249 ₽ в месяц.</small>
+    <div class="mobnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><span>Это программа для компьютера с Windows. Открой этот сайт на компьютере, чтобы скачать, — или <a href="https://t.me/supp0rt_4uilive_twitch">напиши нам в Telegram</a>, пришлём ссылку.</span></div>
   </div>
 </div>
   <div class="shot">
